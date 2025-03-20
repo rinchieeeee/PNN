@@ -1,0 +1,35 @@
+[project]
+name = "pnn"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "rinchieeeee",email = "hayashi5151@icloud.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch (==2.5.1)",
+    "torchvision (==0.20.1)",
+    "torchaudio (==2.5.1)",
+    "marimo (>=0.11.22,<0.12.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "torch_cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+
+[tool.poetry.dependencies]
+torch = {source = "torch_cu121"}
+torchvision = {source = "torch_cu121"}
+torchaudio = {source = "torch_cu121"}
